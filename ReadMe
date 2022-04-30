@@ -1,0 +1,56 @@
+// Author: Patrick Tibbals
+
+a. Which hash function are you using? and where did you get the hash function from?
+
+    public int hashCodes(char[] key) {
+            int sum = 1;
+            for (char c : key){
+                sum = sum * c;
+            }
+            return sum <<3;
+        }
+
+    The hash function I created I came up with without a source, the idea you supplied to us in order to find the
+matching anagrams prompted me to think that adding the ASCii values would give a larger and more unique key.
+The longer I played around with certain PEMDAS operations until I found something that produced less collisions
+then the java hashcode method. I did eventually debug the java hashcode function and found it surprisingly similar to
+how I created mine.
+
+b. What are the advantages and disadvantages of Hashing? Give one application of
+Hashing and give details about that application.
+
+Advantages of Hashing:
+- Faster access time of elements/operations
+- Each input should create its own unique hashcode value
+- With hashing we can make trade offs between space and time constraints to find a good balance for individual
+    applications.
+
+Disadvantages of Hashing:
+- Hashing doesnt allow sorting data which can create some issues depending on how the data is used
+- An excessive amount of collisions will kill efficiency of the hash table
+- A bad collision method could result in looping which could break the program
+
+     I had to do a little bit of research to understand this specific use for hashing. Since you cannot reverse a hash
+ value back to the original databases will store our passwords as the hashcode version. This essentially just means that
+ rather than having to verify a password when you try and say log into gmail the system is really just comparing the
+ unique hashcode generated from the actual password.
+
+
+c. Amount of time you spent on implementing the assignment. Challenges you faced
+while implementing the assignment? How did you overcome these challenges?
+
+    I have probably spent 20 hours over the last few days to complete this assignment creating a faster hashcode and
+collision method than the java string hashcode method. Intelli-J eventually noticed that I was using the string hashcode
+on an char array and not a string. I made those changes to have more accurate comparability to the input to my hashcode
+function. I spent quite a bit of time trying to fine tune my function to get less collision and faster run time. I was
+in the end unable to outperform the time the java hashcode took when I was using my own table.However, my hash function creates
+14969 collisions vs 19082 collisions from javas hash function when using a table size of 43753. I chose this size because
+it is just large enough to maintain a load factor less than 0.75. I found that using a non-linear approach to collision
+rehashing cause a long delay making the program run quite slow or loop endlessly/crash. I settled on using a linear approach
+to the problem. Which collision is quite high I think setting a lower load factor will speed up the function considerably.
+
+    I was however able to outperform the java hashmap/hashcode method with my hashtable/hashcode method by 6 milliseconds
+on average. A lot of my success just came from hours of thinking how I could get things changed. At one point I started
+printing the java hashcode to the console to see the size of the numbers it was generation. Once I noticed how large the
+values were I started to think of ways to get larger values without adding a ton of lines of code. Overall this assignment
+was challenging and rewarding once you got it working. I have found this class very rewarding.

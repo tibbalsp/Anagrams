@@ -1,0 +1,35 @@
+Part I:
+Table size for all tables and maps: 43753 
+My hash function creates 14969 collisions vs 19082 collisions from javas hash function
+I achieved a ratio of:  78.45% the Java collisions
+Below is a table comparing my HashTable vs JAVA HashMap API
+=======================================
+-----My-Function---------Java----------
+|        33        |      40          |
+|        30        |      40          |
+|        33        |      35          |
+|        30        |      38          |
+|        30        |      38          |
+|        30        |      35          |
+|        35        |      35          |
+|        28        |      36          |
+|        36        |      40          |
+|        30        |      40          |
+=======================================
+Avg:     31.5ms    |      37.7ms      |
+=======================================
+Collision: 14969   |      1036        |
+=======================================
+While my hash table preforms faster than the java hashmap my hashtable collisions are much greater than the java hashmap
+
+Part II: 
+[Key]  [Count]  [Words]
+[qiewuro]  [0]  [Those letters have no solution]
+[ssrab]  [1]  [brass]
+[oflg]  [2]  [flog , golf]
+[equiye]  [0]  [Those letters have no solution]
+[stair]  [1]  [stair]
+[arts]  [2]  [star , tsar]
+[ueenq]  [1]  [queen]
+[aaeilor]  [0]  [Those letters have no solution]
+[plicablexe]  [1]  [explicable]
